@@ -1,11 +1,11 @@
 <template>
-  <q-page class="flex">
-    <h1>Index</h1>
+  <q-page class="flex flex-center">
+    <h1>Flex</h1>
   </q-page>
 </template>
 
 <script setup>
 defineOptions({
-  name: "IndexPage",
+  name: "FlexPage",
 });
 </script>
