@@ -59,11 +59,19 @@
       assumenda voluptas molestias optio molestiae laboriosam vero cum maxime
       unde autem.
     </span>
+    <q-btn
+      color="primary"
+      :label="sideMenuOpen ? 'Close Menu' : 'Open Menu'"
+      class="q-mt-md q-px-md"
+      @click="toggleSideMenu"
+    />
   </q-page>
 </template>
 
 <script setup>
+import { useUi } from "src/composables/useUi";
 defineOptions({
   name: "TypographyPage",
 });
+const { sideMenuOpen, toggleSideMenu } = useUi();
 </script>
