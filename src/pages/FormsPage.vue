@@ -5,6 +5,7 @@
 
     <div class="row justify-center">
       <q-form
+        autocomplete="off"
         @submit="onSubmit"
         @reset="onReset"
         class="q-gutter-md col-xs-12 col-md-6 q-pt-xl"
@@ -76,11 +77,13 @@
 </template>
 
 <script setup>
+import { useQuasar } from "quasar";
 import { ref } from "vue";
 
 defineOptions({
   name: "FormsPage",
 });
+const $q = useQuasar();
 
 const userForm = ref({
   email: "",
@@ -93,11 +96,15 @@ const userForm = ref({
 const onSubmit = () => {
   userForm.value.errorInContitions = false;
   if (!userForm.value.conditions) {
-    console.log("Should accept conditions");
+    $q.notify({
+      message: "Should accept conditions",
+      color: "red",
+      position: "top-right",
+      icon: "las la-exclamation-circle",
+    });
     userForm.value.errorInContitions = true;
     return;
   }
-  console.log(userForm);
 };
 const onReset = () => {
   userForm.value = {
