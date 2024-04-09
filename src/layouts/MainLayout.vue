@@ -60,7 +60,7 @@ const linksList = [
     title: "Docs",
     caption: "quasar.dev",
     icon: "las la-graduation-cap",
-    link: "https://quasar.dev",
+    link: "https://quasar.dev/docs",
   },
 ];
 
